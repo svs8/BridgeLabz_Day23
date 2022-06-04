@@ -50,14 +50,30 @@ public class UserValidation {
         boolean result2 = matcher2.matches();
 
         if (result2 == true) {
-            System.out.println("Email is valid");
+            mobileNumberValidation();
         } else {
             System.out.println("Email is not valid");
         }
 
     }
 
+    public static void mobileNumberValidation() {
+        Scanner scanner = new Scanner(System.in);
+        String MobileNumberPattern = "(91-)?[0-9]{10}";
+        System.out.println("Enter the phone number");
+        String phoneNumber = scanner.next();
 
+        Pattern pattern3 = Pattern.compile(MobileNumberPattern);
+        Matcher matcher3 = pattern3.matcher(phoneNumber);
+        Boolean result3 = matcher3.matches();
+
+        if (result3 == true) {
+            System.out.println("Mobile number is valid");
+        } else {
+            System.out.println("Mobile number is invalid");
+        }
+
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
         userFirstName();
