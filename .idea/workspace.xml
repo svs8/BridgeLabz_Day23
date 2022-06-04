@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d3a7eeba-0772-44a0-af22-e5df499301c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/UserValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/UserValidation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,7 +49,7 @@
       <recent name="com.bridgelabz" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserValidationTest.givenFirstName_WhenProper_ShouldReturnTrue">
+  <component name="RunManager" selected="Application.UserValidation">
     <configuration name="UserValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.UserValidation" />
       <module name="Bridgelabz_Day23" />
@@ -80,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserValidationTest.givenFirstName_WhenProper_ShouldReturnTrue" />
         <item itemvalue="Application.UserValidation" />
+        <item itemvalue="JUnit.UserValidationTest.givenFirstName_WhenProper_ShouldReturnTrue" />
       </list>
     </recent_temporary>
   </component>
