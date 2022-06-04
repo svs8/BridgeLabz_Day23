@@ -1,4 +1,5 @@
 package com.bridgelabz;
+import javax.swing.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,11 +30,11 @@ public class UserValidation {
         System.out.println("Enter Last Name:");
         String lastName = scanner.next();
 
-        Pattern pattern = Pattern.compile(lastNamePattern);
-        Matcher matcher = pattern.matcher(lastName);
-        boolean result = matcher.matches();
+        Pattern pattern1 = Pattern.compile(lastNamePattern);
+        Matcher matcher1 = pattern1.matcher(lastName);
+        boolean result1 = matcher1.matches();
 
-        if(result == true)
+        if(result1 == true)
             userEmail();
         else
             System.out.println("Last Name is Invalid");
@@ -68,12 +69,30 @@ public class UserValidation {
         Boolean result3 = matcher3.matches();
 
         if (result3 == true) {
-            System.out.println("Mobile number is valid");
+            passwordValidation();
         } else {
             System.out.println("Mobile number is invalid");
         }
+    }
+
+    public static void passwordValidation(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern="[a-zA-Z0-9~!@#$]{8,}";
+        System.out.println("Enter the Password");
+        String passWord=scanner.next();
+
+        Pattern pattern4=Pattern.compile(PasswordPattern);
+        Matcher matcher4=pattern4.matcher(passWord);
+        Boolean result4=matcher4.matches();
+
+        if(result4==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Password is invalid,please enter minimum 8 character");
+        }
 
     }
+
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
         userFirstName();
