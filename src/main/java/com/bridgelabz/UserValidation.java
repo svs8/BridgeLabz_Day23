@@ -86,9 +86,26 @@ public class UserValidation {
         Boolean result4=matcher4.matches();
 
         if(result4==true){
-            System.out.println("Password is valid");
+            passwordValidation2();
         }else{
             System.out.println("Password is invalid,please enter minimum 8 character");
+        }
+
+    }
+    public static void passwordValidation2(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern2="[A-Z]+[a-zA-Z0-9~!@#$]{7,}";
+        System.out.println("Enter the Password to check Rule2");
+        String passWord2=scanner.next();
+
+        Pattern pattern5=Pattern.compile(PasswordPattern2);
+        Matcher matcher5=pattern5.matcher(passWord2);
+        Boolean result5=matcher5.matches();
+
+        if(result5==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Password is invalid,please enter at least one upper case");
         }
 
     }
