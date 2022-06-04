@@ -103,12 +103,31 @@ public class UserValidation {
         Boolean result5=matcher5.matches();
 
         if(result5==true){
-            System.out.println("Password is valid");
+            passwordValidation3();
         }else{
             System.out.println("Password is invalid,please enter at least one upper case");
         }
 
     }
+
+    public static void passwordValidation3(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern3="[A-Z][0-9][a-zA-Z0-9~!@#$]{6,}";
+        System.out.println("Enter the Password to check Rule3");
+        String passWord3=scanner.next();
+
+        Pattern pattern6=Pattern.compile(PasswordPattern3);
+        Matcher matcher6=pattern6.matcher(passWord3);
+        Boolean result6=matcher6.matches();
+
+        if(result6==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Password is invalid,please enter at least one numeric");
+        }
+
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
