@@ -121,11 +121,27 @@ public class UserValidation {
         Boolean result6=matcher6.matches();
 
         if(result6==true){
-            System.out.println("Password is valid");
+            PasswordValidation4();
         }else{
             System.out.println("Password is invalid,please enter at least one numeric");
         }
 
+    }
+    private static void PasswordValidation4() {
+
+        String PasswordPattern4 = "([0-9a-zA-Z]*[~!@#$]){1}[0-9a-zA-Z~!@#$]*";
+        System.out.println("Enter your Password for Rule4:");
+        Scanner scanner = new Scanner(System.in);
+        String password4 = scanner.next();
+
+        Pattern pattern7 = Pattern.compile(PasswordPattern4);
+        Matcher matcher7 = pattern7.matcher(password4);
+        boolean result7 = matcher7.matches();
+
+        if(result7 == true)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is invalid & plz enter at least one Special character");
     }
 
 
