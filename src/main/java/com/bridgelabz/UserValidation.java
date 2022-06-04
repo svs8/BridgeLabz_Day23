@@ -34,12 +34,28 @@ public class UserValidation {
         boolean result = matcher.matches();
 
         if(result == true)
-            System.out.println("Last Name is Valid");
+            userEmail();
         else
             System.out.println("Last Name is Invalid");
     }
 
+    public static void userEmail() {
+        String emailPattern = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*" + "@([0-9a-zA-Z][_]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$";
+        System.out.println("Enter your Email:");
+        Scanner scanner = new Scanner(System.in);
+        String email = scanner.next();
 
+        Pattern pattern2 = Pattern.compile(emailPattern);
+        Matcher matcher2 = pattern2.matcher(email);
+        boolean result2 = matcher2.matches();
+
+        if (result2 == true) {
+            System.out.println("Email is valid");
+        } else {
+            System.out.println("Email is not valid");
+        }
+
+    }
 
 
     public static void main(String[] args) {
