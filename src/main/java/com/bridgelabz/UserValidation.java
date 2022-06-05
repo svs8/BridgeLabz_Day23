@@ -111,37 +111,90 @@ public class UserValidation {
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration program");
-        System.out.println("Welcome to Exception Handling");
-        try {
-            UserValidationException.userFirstNameException();
-        } catch (CustomException e) {
-            e.printStackTrace();
-            System.out.println("Custom Exception is handled");
-        }
-        try {
-            UserValidationException.userLastNameException();
-        } catch (CustomException e) {
-            e.printStackTrace();
-            System.out.println("Custom Exception is handled");
-        }
-        try {
-            UserValidationException.userEmailException();
-        } catch (CustomException e) {
-            e.printStackTrace();
-            System.out.println("Custom Exception is handled");
-        }
-        try {
-            UserValidationException.mobileNumberValidationException();
-        } catch (CustomException e) {
-            e.printStackTrace();
-            System.out.println("Custom Exception is handled");
-        }
-        try {
-            UserValidationException.passwordValidationException();
-        } catch (CustomException e) {
-            e.printStackTrace();
-            System.out.println("Custom Exception is handled");
-        }
+//        System.out.println("Welcome to Exception Handling");
+//        try {
+//            UserValidationException.userFirstNameException();
+//        } catch (CustomException e) {
+//            e.printStackTrace();
+//            System.out.println("Custom Exception is handled");
+//        }
+//        try {
+//            UserValidationException.userLastNameException();
+//        } catch (CustomException e) {
+//            e.printStackTrace();
+//            System.out.println("Custom Exception is handled");
+//        }
+//        try {
+//            UserValidationException.userEmailException();
+//        } catch (CustomException e) {
+//            e.printStackTrace();
+//            System.out.println("Custom Exception is handled");
+//        }
+//        try {
+//            UserValidationException.mobileNumberValidationException();
+//        } catch (CustomException e) {
+//            e.printStackTrace();
+//            System.out.println("Custom Exception is handled");
+//        }
+//        try {
+//            UserValidationException.passwordValidationException();
+//        } catch (CustomException e) {
+//            e.printStackTrace();
+//            System.out.println("Custom Exception is handled");
+//        }
+
+        ValidationInterface firstNameValidation=(x)->{
+            Pattern pattern=Pattern.compile("[A-Z]{1}[a-z]{2,}");
+            Matcher matcher=pattern.matcher(x);
+            boolean result=matcher.matches();
+            return result;
+        };
+
+        System.out.println("Validating name,phone number,email and password using lambda functions");
+        boolean validationResult=firstNameValidation.isValidEntry("Surak");
+        System.out.println("Firstname validation="+validationResult);
+
+        ValidationInterface lastNameValidation=(x)->{
+            Pattern pattern=Pattern.compile("[A-Z]{1}[a-z]{2,}");
+            Matcher matcher=pattern.matcher(x);
+            boolean result1=matcher.matches();
+            return result1;
+        };
+
+        boolean validationResult1=lastNameValidation.isValidEntry("Vittals");
+        System.out.println("Lastname validation="+validationResult1);
+
+        ValidationInterface emailValidation=(x)->{
+            Pattern pattern=Pattern.compile("^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*" + "@([0-9a-zA-Z][_]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$");
+            Matcher matcher=pattern.matcher(x);
+            boolean result2=matcher.matches();
+            return result2;
+        };
+
+        boolean validationResult2=emailValidation.isValidEntry("abc@yahoo.com");
+        System.out.println("Email validation="+validationResult2);
+
+        ValidationInterface mobileNumberValidation=(x)->{
+            Pattern pattern=Pattern.compile("(91-)?[0-9]{10}");
+            Matcher matcher=pattern.matcher(x);
+            boolean result3=matcher.matches();
+            return result3;
+        };
+
+        boolean validationResult3=mobileNumberValidation.isValidEntry("91-8787644356");
+        System.out.println("Mobile Number validation="+validationResult3);
+
+        ValidationInterface PasswordValidation=(x)->{
+            Pattern pattern=Pattern.compile("([0-9a-zA-Z]*[~!@#$]){1}[0-9a-zA-Z~!@#$]*");
+            Matcher matcher=pattern.matcher(x);
+            boolean result4=matcher.matches();
+            return result4;
+        };
+
+        boolean validationResult4=PasswordValidation.isValidEntry("8a#wertyry");
+        System.out.println("Password validation="+validationResult4);
+
+
 
     }
 
